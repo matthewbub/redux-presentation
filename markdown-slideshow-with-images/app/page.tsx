@@ -164,14 +164,13 @@ Cons
 - The system follows a rule (called transitions) to move to the next state
 - Optionally, the transition triggers effects (do work) or guards (only allow transition if a condition is true)
 
---- 
+---
 
 # State Machine Examples:
 
 Can anyone list an example of a state machine?
 
-
---- 
+---
 
 # State Machine Examples:
 
