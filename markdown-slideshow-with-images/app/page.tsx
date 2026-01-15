@@ -302,6 +302,16 @@ const updatePost = createAction<{ id: string; title: string; content: string }>(
 
 ---
 
+# Recall: What is Redux? (Refresher)
+
+Redux solves the problem of unpredictable state management in complex JS applications, where dealing with mutations and asynchronicity makes it difficult to understand when, why, and how state changes occur.
+
+Redux makes state mutations predictable by imposing restrictions on how and when updates can happen
+
+_Source:_ https://redux.js.org/understanding/thinking-in-redux/motivation
+
+---
+
 # What is RTK (Redux Toolkit)?
 
 It was created Redux Toolkit to eliminate the "boilerplate" from hand-written Redux logic, prevent common mistakes, and provide APIs that simplify standard Redux tasks.
