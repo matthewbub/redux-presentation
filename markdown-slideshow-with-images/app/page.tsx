@@ -24,10 +24,10 @@ const presentationContent = `
 
 ### Redux:
 
+- What is Redux? (Refresher)
 - What is RTK?
 - Redux Side Effects
   - Thunks
-  - Sagas
   - Middleware
 
 ---
@@ -381,13 +381,14 @@ Reducers must always follow some specific rules:
 - They are not allowed to modify the existing state. Instead, they must make immutable updates, by copying the existing state and making changes to the copied values.
 - They must not do any asynchronous logic, calculate random values, or cause other "side effects"
 
+See: \`redux-with-rtk-example/src/features/counter/counterSlice.ts\` - \`increment\`, \`decrement\`, \`incrementByAmount\`
+
 
 ---
 
 # Redux Side Effects
 
 - Thunks
-- Sagas
 - Middleware
 
 ---
@@ -398,30 +399,21 @@ A thunk is a specific kind of Redux function that can contain asynchronous logic
 
 > For Redux specifically, "thunks" are a pattern of writing functions with logic inside that can interact with a Redux store's dispatch and getState methods.
 
+See: \`redux-with-rtk-example/src/features/counter/counterSlice.ts\` - \`incrementAsync\`
+
 Sources: 
 - https://redux.js.org/usage/writing-logic-thunks
 - https://redux.js.org/tutorials/essentials/part-2-app-structure
 
 ---
 
-# Sagas
-
-Q: Does anyone want to explain Sagas?
-
----
-
-# Sagas
-
-An intuitive Redux side effect manager. Sagas are a pattern for managing asynchronous logic in Redux applications.
-
-Sources: https://redux-saga.js.org/
-
----
 
 # Middleware
 
 
 > It provides a third-party extension point between dispatching an action, and the moment it reaches the reducer. People use Redux middleware for logging, crash reporting, talking to an asynchronous API, routing, and more.
+
+See: \`redux-with-rtk-example/src/app/store.ts\` - RTK Query middleware configuration
 
 Sources: https://redux.js.org/understanding/history-and-design/middleware
 
