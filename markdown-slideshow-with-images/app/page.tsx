@@ -13,11 +13,11 @@ const presentationContent = `
 
 - Comparing Backend data vs UI State
 - What is Redux?
-- Prop Drilling
-- React Context
-- State Machines
+- Prop Drilling vs React Context
+  - React Context
+  - State Machines
 - Immutability
-- Shallow equality checking Vs Deep equality checking
+  - Shallow equality checking Vs Deep equality checking
 - Pure functions
 - Arity & Currying
 
@@ -223,6 +223,15 @@ Source: https://redux.js.org/faq/immutable-data#why-is-immutability-required-by-
 **Trivia Q:** Can anyone name the 2 specific criteria?
 
 Pure functions must meet two specific criteria:
+
+---
+
+## Pure Functions
+
+**Trivia Q:** Can anyone name the 2 specific criteria?
+
+Pure functions must meet two specific criteria:
+
 
 1. **Given the same inputs, it always returns the same output**
 2. **It produces no side effects**
