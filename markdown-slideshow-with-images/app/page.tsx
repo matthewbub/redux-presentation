@@ -14,8 +14,9 @@ const presentationContent = `
 - Comparing Backend data vs UI State
 - What is Redux?
 - Prop Drilling vs React Context
+  - Prop Drilling
   - React Context
-  - State Machines
+- State Machines
 - Immutability
   - Shallow equality checking Vs Deep equality checking
 - Pure functions
