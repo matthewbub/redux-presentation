@@ -7,6 +7,11 @@ const presentationContent = `
 
 ---
 
+# Use of AI Disclaimer:
+- The images are AI generated
+- If a blurb of text was AI generated, it has been clearly disclosed as such
+---
+
 # Outline:
 
 ### Pre Redux:
