@@ -406,20 +406,31 @@ Sources:
 
 # Sagas
 
-<Couldn't find official docs on short notice>
-
 Q: Does anyone want to explain Sagas?
+
+---
+
+# Sagas
+
+An intuitive Redux side effect manager. Sagas are a pattern for managing asynchronous logic in Redux applications.
+
+Sources: https://redux-saga.js.org/
 
 ---
 
 # Middleware
 
-Different than say Express.js or Next.js
 
 > It provides a third-party extension point between dispatching an action, and the moment it reaches the reducer. People use Redux middleware for logging, crash reporting, talking to an asynchronous API, routing, and more.
 
 Sources: https://redux.js.org/understanding/history-and-design/middleware
 
+
+---
+
+Thats all folks!
+
+![](https://3zmdnu3csfagxyyo.public.blob.vercel-storage.com/Redux-Badge-Gemini_Generated_Image_7iokd57iokd57iok.png)
 
 `;
 
