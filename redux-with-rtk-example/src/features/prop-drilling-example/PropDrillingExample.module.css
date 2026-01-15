@@ -1,0 +1,87 @@
+.container {
+  padding: 20px;
+  border: 2px dashed #ff6b6b;
+  border-radius: 12px;
+  margin: 20px 0;
+  background: rgba(255, 107, 107, 0.05);
+}
+
+.title {
+  color: #ff6b6b;
+  margin: 0 0 8px 0;
+  font-size: 1.2rem;
+}
+
+.subtitle {
+  color: #888;
+  margin: 0 0 16px 0;
+  font-size: 0.9rem;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.middle,
+.inner,
+.deep,
+.sibling {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid;
+}
+
+.middle {
+  background: rgba(255, 193, 7, 0.1);
+  border-color: #ffc107;
+}
+
+.inner {
+  background: rgba(255, 152, 0, 0.1);
+  border-color: #ff9800;
+  margin-top: 8px;
+}
+
+.deep {
+  background: rgba(244, 67, 54, 0.1);
+  border-color: #f44336;
+  margin-top: 8px;
+}
+
+.sibling {
+  background: rgba(156, 39, 176, 0.1);
+  border-color: #9c27b0;
+}
+
+.label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  opacity: 0.8;
+}
+
+.count {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f44336;
+}
+
+.button {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  background: #f44336;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 12px;
+}
+
+.button:hover {
+  background: #d32f2f;
+}
