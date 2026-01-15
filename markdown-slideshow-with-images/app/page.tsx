@@ -394,9 +394,13 @@ Reducers must always follow some specific rules:
 
 # Thunks
 
+A thunk is a specific kind of Redux function that can contain asynchronous logic.
+
 > For Redux specifically, "thunks" are a pattern of writing functions with logic inside that can interact with a Redux store's dispatch and getState methods.
 
-Source: https://redux.js.org/usage/writing-logic-thunks
+Sources: 
+- https://redux.js.org/usage/writing-logic-thunks
+- https://redux.js.org/tutorials/essentials/part-2-app-structure
 
 ---
 
