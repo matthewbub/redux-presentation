@@ -7,7 +7,7 @@ const presentationContent = `
 
 ---
 
-## Outline:
+# Outline:
 
 ### Pre Redux:
 
@@ -32,15 +32,15 @@ const presentationContent = `
 
 ---
 
-## Comparing Backend data vs UI State
+# Comparing Backend data vs UI State
 
-### Backend data
+## Backend data
 
 - Source of truth from your API/database
 - Persistent and shared across users/sessions
 - Lives outside your application
 
-### UI State
+## UI State
 
 - Temporary data for the current users session
 - Controls what the user sees and how they interact
@@ -48,7 +48,7 @@ const presentationContent = `
 
 ---
 
-## What is Redux?
+# What is Redux?
 
 Redux solves the problem of unpredictable state management in complex JS applications, where dealing with mutations and asynchronicity makes it difficult to understand when, why, and how state changes occur.
 
@@ -60,13 +60,13 @@ _Quick Review:_ Redux 3 principles: https://redux.js.org/understanding/thinking-
 
 ---
 
-## Prop Drilling vs React Context
+# Prop Drilling vs React Context
 
 ![Prop Drilling vs Context](https://3zmdnu3csfagxyyo.public.blob.vercel-storage.com/PropDrillingVsReact_Gemini_Generated_Image_j2wqclj2wqclj2wq.png)
 
 ---
 
-## Prop Drilling
+# Prop Drilling
 
 Prop drilling has a Vertical data flow (step-by-step)
 
@@ -91,15 +91,15 @@ function Header({ user }) {
 
 ---
 
-## Prop Drilling: Pros & Cons
+# Prop Drilling: Pros & Cons
 
-### Pros
+## Pros
 
 - Explicit data flow
 - Fine for small apps
 - easy to debug when working in small apps
 
-### Cons
+## Cons
 
 - Code becomes cluttered - intermediate components become "pass-through" components
 - Tightly coupled together
@@ -107,7 +107,7 @@ function Header({ user }) {
 
 ---
 
-## React Context
+# React Context
 
 React Context has a **Broadcast data flow** (direct access)
 
@@ -137,7 +137,7 @@ function Header() {
 
 ---
 
-## React Context: Pros
+# React Context: Pros
 
 - Avoids prop drilling
 - Built-in to React
@@ -152,7 +152,7 @@ Cons
 
 ---
 
-## State Machines
+# State Machines
 
 > A finite-state machine AKA state machine is a mathematical model of computation. It is an abstract machine that can be exactly one of a finite number of states at any given time.
 
@@ -166,14 +166,14 @@ Cons
 
 --- 
 
-## State Machine Examples:
+# State Machine Examples:
 
 Can anyone list an example of a state machine?
 
 
 --- 
 
-## State Machine Examples:
+# State Machine Examples:
 
 - Vending machines dispense products when the proper combination of coins is deposited
 - Elevators: whose sequence of stops is determined by the floors requested by riders;
@@ -186,7 +186,7 @@ Source: https://en.wikipedia.org/wiki/Finite-state_machine
 
 ---
 
-## Immutability
+# Immutability
 
 ![Immutable definition](https://3zmdnu3csfagxyyo.public.blob.vercel-storage.com/Screenshot%202026-01-14%20at%202.16.33%E2%80%AFPM.png)
 
@@ -205,7 +205,7 @@ _Sources:_
 
 ---
 
-## Shallow vs Deep Equality Checking
+# Shallow vs Deep Equality Checking
 
 ![Shallow vs Deep Equality](https://3zmdnu3csfagxyyo.public.blob.vercel-storage.com/nascar-race-shallow-vs-deep-equality--t3chat--1%20%281%29.png)
 
@@ -219,7 +219,7 @@ Source: https://redux.js.org/faq/immutable-data#why-is-immutability-required-by-
 
 ---
 
-## Pure Functions
+# Pure Functions
 
 **Trivia Q:** Can anyone name the 2 specific criteria?
 
@@ -227,7 +227,7 @@ Pure functions must meet two specific criteria:
 
 ---
 
-## Pure Functions
+# Pure Functions
 
 **Trivia Q:** Can anyone name the 2 specific criteria?
 
@@ -239,19 +239,32 @@ Pure functions must meet two specific criteria:
 
 ---
 
-## Arity & Currying
+# Arity & Currying
 
 **Arity** refers to the number of arguments a function takes.
 
-> Trivia Q: Arity in mathematics is also known as: **rank**
-
-### Why is Arity important in Redux?
+## Why is Arity important in Redux?
 - Reducers adhere to a fixed arity: \`(state, action) => newState\`
 - Action creators have arity based on data they need
 
+> Trivia Q: Arity in mathematics is also known as:
+
 ---
 
-## Action Creator Arity Examples
+# Arity & Currying
+
+**Arity** refers to the number of arguments a function takes.
+
+## Why is Arity important in Redux?
+- Reducers adhere to a fixed arity: \`(state, action) => newState\`
+- Action creators have arity based on data they need
+
+> Trivia Q: Arity in mathematics is also known as: **rank**
+
+---
+
+
+# Action Creator Arity Examples
 
 \`\`\`ts
 import { createAction } from "@reduxjs/toolkit";
@@ -286,11 +299,11 @@ const updatePost = createAction<{ id: string; title: string; content: string }>(
 
 ---
 
-## On Redux
+# On Redux
 
 ---
 
-## What is RTK (Redux Toolkit)?
+# What is RTK (Redux Toolkit)?
 
 It was created Redux Toolkit to eliminate the "boilerplate" from hand-written Redux logic, prevent common mistakes, and provide APIs that simplify standard Redux tasks.
 
@@ -298,7 +311,7 @@ Source: https://redux-toolkit.js.org/introduction/why-rtk-is-redux-today#what-do
 
 ---
 
-## State (Redux store)
+# State (Redux store)
 
 With Redux, we're taking an approach much more in-line with React Context in the sense that we're shifting from decentralized, component-owned state to a Single Source of Truth
 
@@ -310,7 +323,7 @@ Discussion: Not all state needs to live in a global store. What state is better 
 
 ---
 
-## When to Use Redux vs Local State
+# When to Use Redux vs Local State
 
 "AI Generated" rule of thumb for when to use Redux vs local state:
 
@@ -323,7 +336,7 @@ Discussion: Not all state needs to live in a global store. What state is better 
 
 ---
 
-## Dispatching actions
+# Dispatching actions
 
 > The only way to update the state is to call store.dispatch() and pass in an action object. You can think of dispatching actions as "triggering an event
 
@@ -351,7 +364,7 @@ Source: https://redux.js.org/tutorials/fundamentals/part-2-concepts-data-flow#di
 ---
 
 
-## Reducers
+# Reducers
 
 Reducers must always follow some specific rules:
 
@@ -362,7 +375,7 @@ Reducers must always follow some specific rules:
 
 ---
 
-## Redux Side Effects
+# Redux Side Effects
 
 - Thunks
 - Sagas
@@ -370,7 +383,7 @@ Reducers must always follow some specific rules:
 
 ---
 
-## Thunks
+# Thunks
 
 > For Redux specifically, "thunks" are a pattern of writing functions with logic inside that can interact with a Redux store's dispatch and getState methods.
 
@@ -378,7 +391,7 @@ Source: https://redux.js.org/usage/writing-logic-thunks
 
 ---
 
-## Sagas
+# Sagas
 
 <Couldn't find official docs on short notice>
 
@@ -386,7 +399,7 @@ Q: Does anyone want to explain Sagas?
 
 ---
 
-## Middleware
+# Middleware
 
 Different than say Express.js or Next.js
 
