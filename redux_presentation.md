@@ -1,3 +1,6 @@
+> The slides are more up to date at this point
+> redux/markdown-slideshow-with-images/app/page.tsx
+
 Outline:
 
 Pre Redux:
