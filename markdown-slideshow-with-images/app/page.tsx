@@ -242,6 +242,9 @@ Pure functions must meet two specific criteria:
 1. **Given the same inputs, it always returns the same output**
 2. **It produces no side effects**
 
+Arity of 1 
+Same as 
+
 ---
 
 # Arity & Currying
@@ -310,125 +313,92 @@ const updatePost = createAction<{ id: string; title: string; content: string }>(
 
 # Recall: What is Redux? (Refresher)
 
-Redux solves the problem of unpredictable state management in complex JS applications, where dealing with mutations and asynchronicity makes it difficult to understand when, why, and how state changes occur.
-
-Redux makes state mutations predictable by imposing restrictions on how and when updates can happen
-
-_Source:_ https://redux.js.org/understanding/thinking-in-redux/motivation
+Redux makes working with state **predictable** by imposing restrictions on how and when updates can happen
 
 ---
 
 # What is RTK (Redux Toolkit)?
 
-It was created Redux Toolkit to eliminate the "boilerplate" from hand-written Redux logic, prevent common mistakes, and provide APIs that simplify standard Redux tasks.
-
-Source: https://redux-toolkit.js.org/introduction/why-rtk-is-redux-today#what-does-redux-toolkit-do
-
----
-
-# State (Redux store)
-
-With Redux, we're taking an approach much more in-line with React Context in the sense that we're shifting from decentralized, component-owned state to a Single Source of Truth
-
-<!-- Mat
-- Show \`combineSlices(counterSlice, quotesApiSlice)\` in \`redux/redux-with-rtk-example/src/app/store.ts\`
-- Show the final product in DevTools -->
-
-Discussion: Not all state needs to live in a global store. What state is better kept at a local component level?
-
----
-
-# When to Use Redux vs Local State
-
-"AI Generated" rule of thumb for when to use Redux vs local state:
-
-> Ask yourself:
->
-> 1. Does another component need this state? → Redux (or lift state up)
-> 2. Does it need to survive navigation? → Redux
-> 3. Is it purely visual/temporary? → Local state
-> 4. Would prop drilling be 3+ levels? → Redux (or Context)
+There's a-lot of boilerplate in Redux. RTK is a library that helps you write less of the boilerplate and avoid common mistakes.
 
 ---
 
 # Dispatching actions
 
-> The only way to update the state is to call store.dispatch() and pass in an action object. You can think of dispatching actions as "triggering an event
+AKA "Triggering an event" - this is how you update the state.
 
 \`\`\`tsx
-const updatePost = createAction<{ id: string; title: string; content: string }>(
-  "posts/postUpdated"
-);
-dispatch(updatePost({ id: "1", title: "Hello", content: "World" }));
-// → { type: "posts/postUpdated", payload: { id: "1", title: "Hello", content: "World" } }
-
-console.log(store.getState());
-// Output:
-// {
-//   counter: { value: 10 },
-//   posts: [{ id: "1", title: "Redux" }]
-// }
+<button onClick={() => dispatch(increment())}>
+  Increment
+</button>
 \`\`\`
 
 
-
-Show real code example in \`redux/redux-with-rtk-example/src/features/counter/Counter.tsx\`
-
-Source: https://redux.js.org/tutorials/fundamentals/part-2-concepts-data-flow#dispatch
-
 ---
-
 
 # Reducers
 
 Reducers must always follow some specific rules:
 
-- They should only calculate the new state value based on the state and action arguments
-- They are not allowed to modify the existing state. Instead, they must make immutable updates, by copying the existing state and making changes to the copied values.
+- They must be pure functions that return a new state value based on the state and action arguments
+- Reducers must make immutable updates by creating copies of state rather than modifying the original.
 - They must not do any asynchronous logic, calculate random values, or cause other "side effects"
-
-See: \`redux-with-rtk-example/src/features/counter/counterSlice.ts\` - \`increment\`, \`decrement\`, \`incrementByAmount\`
-
 
 ---
 
-# Redux Side Effects
+# Reducers
 
-- Thunks
-- Middleware
+RTK Reducer Example:
+
+\`\`\`ts
+const counterSlice = createSlice({
+  name: 'counter',
+  initialState: 0,
+  reducers: {
+    increment: (state) => state + 1,
+    // ... other reducers ...
+  },
+});
+
+
+// ...
+
+const MyButton = () => {
+  // ...
+  return (
+    <button onClick={() => dispatch(increment())}>
+      Increment
+    </button>
+  )
+}
+\`\`\`
+
+---
+
+# Redux and Side Effects
+
+- Redux reducers must never contain "side effects", and can only contain synchronous logic.
+- A "side effect" is a change to state or behavior that can be seen outside of a returning value from a function.
+
+---
+
+# Redux Middleware 
+
+Redux middleware enables you to write logic that _does have side effects_ and _can contain_ asynchronous logic.
+
+- It has access to the same dispatch and getState functions as the reducers.
 
 ---
 
 # Thunks
 
-A thunk is a specific kind of Redux function that can contain asynchronous logic.
+"Thunks" are one of the patterns most commonly used to write asynchronous logic in Redux. 
 
-> For Redux specifically, "thunks" are a pattern of writing functions with logic inside that can interact with a Redux store's dispatch and getState methods.
-
-See: \`redux-with-rtk-example/src/features/counter/counterSlice.ts\` - \`incrementAsync\`
-
-Sources: 
-- https://redux.js.org/usage/writing-logic-thunks
-- https://redux.js.org/tutorials/essentials/part-2-app-structure
-
----
-
-
-# Middleware
-
-
-> It provides a third-party extension point between dispatching an action, and the moment it reaches the reducer. People use Redux middleware for logging, crash reporting, talking to an asynchronous API, routing, and more.
-
-See: \`redux-with-rtk-example/src/app/store.ts\` - RTK Query middleware configuration
-
-Sources: https://redux.js.org/understanding/history-and-design/middleware
-
+Redux defines a "thunk" as a piece of code that does some delayed work.
 
 ---
 
 Thats all folks!
-
-![](https://3zmdnu3csfagxyyo.public.blob.vercel-storage.com/Redux-Badge-Gemini_Generated_Image_7iokd57iokd57iok.png)
 
 `;
 
