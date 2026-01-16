@@ -375,6 +375,8 @@ const MyButton = () => {
 }
 \`\`\`
 
+We are dispatching an action (created by the action creator \`increment\`), and the reducer handles it by returning \`state + 1\` as the new state.
+
 ---
 
 # Redux and Side Effects
