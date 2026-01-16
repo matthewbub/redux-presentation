@@ -327,6 +327,8 @@ There's a-lot of boilerplate in Redux. RTK is a library that helps you write les
 
 AKA "Triggering an event" - this is how you update the state.
 
+Updating Redux State requires dispatching an action object.
+
 \`\`\`tsx
 <button onClick={() => dispatch(increment())}>
   Increment
